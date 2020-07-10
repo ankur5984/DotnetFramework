@@ -1,0 +1,20 @@
+﻿
+@using BOL;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1><strong>Customer Lists</strong></h1>
+<ol>
+    @{
+
+        List<Customer> theCustomer = ViewData["customers"] as List<Customer>;
+
+        foreach (Customer p in theCustomer)
+        {
+            <li> @p.Name | @Html.ActionLink("Details", "Details", "Customers", new { id = p.Id },null)</li>
+
+        }
+
+    }
+</ol>

@@ -1,0 +1,19 @@
+﻿@using BOL;
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+   // List<Product> products = Context.Application["products"] as List<Product>;
+  //  Product product = products.Find(product =>(product.))
+}
+<h2>your Cart item</h2>
+<ol>
+    @{
+    List<Item> theItems = Model as List<Item>;
+        foreach (Item newItem in theItems)
+        {
+            <li>@newItem.ProductId and @newItem.Quantity price = @newItem.Quantity*1.5</li>
+        }
+    }
+</ol>

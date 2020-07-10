@@ -1,0 +1,31 @@
+﻿
+@using BOL;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@{
+    Cart theCart = Context.Session["shoppingCart"] as Cart;
+    int count = theCart.Items.Count;
+}
+<h3>Your Shopping Cart ITems =@count</h3>
+<hr />
+<ol>
+    @{
+        List<Product> newProduct = ViewBag.products;
+        foreach (Product theProduct in newProduct)
+        {
+            <li>
+                @theProduct.Title | @Html.ActionLink("Details", "Details", "Products", new { id = theProduct.Id }, null) |
+                @Html.ActionLink("Update", "Update", "Products", new { id = theProduct.Id }, null) |
+                @Html.ActionLink("Delete", "Delete", "Products", new { id = theProduct.Id }, null) |
+                @Html.ActionLink("Add to cart", "addtocart", "ShoppingCart", new { id = theProduct.Id }, null)
+
+
+            </li>
+        }
+
+
+    }
+</ol>

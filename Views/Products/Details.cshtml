@@ -1,0 +1,17 @@
+﻿@using BOL;
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@{
+    Product newProduct = ViewBag.product as Product;
+    <p>
+        Id       = @newProduct.Id
+        Quantity = @newProduct.Quantity
+        Price    = @newProduct.Price
+    </p>
+    @Html.ActionLink("Add to cart", "addtocart", "ShoppingCart", new { id = newProduct.Id }, null)
+
+}

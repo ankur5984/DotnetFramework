@@ -1,0 +1,15 @@
+﻿
+@using BOL;
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    List<Employee> employees = Model as List<Employee>;
+    foreach (Employee emp in employees)
+    {
+        <p>@emp.FullName | @Html.ActionLink("Details", "Details", "Employees", new { id = emp.Id },null)</p>
+
+    }
+}
+

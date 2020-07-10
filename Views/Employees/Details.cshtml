@@ -1,0 +1,18 @@
+﻿@using BOL;
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<p>Employee  Details Page</p>
+@{
+
+    Employee theEmployee = Model as Employee;
+    <div>
+        <p> Id =@theEmployee.Id</p>
+        <p> Full Name =@theEmployee.FullName</p>
+        <p> Location =@theEmployee.Location</p>
+        <p> Age =@theEmployee.Age</p>
+
+    </div>
+}

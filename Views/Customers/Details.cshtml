@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+@{
+    Customer customer = ViewData["customer"] as Customer;
+    <h1>
+        <strong>
+            Details of @customer.Name
+        </strong>
+    </h1>
+
+    <p>
+        Id:        @customer.Id
+        Location:  @customer.Location
+        Age:       @customer.Age
+
+
+
+    </p>
+}

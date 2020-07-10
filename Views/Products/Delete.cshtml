@@ -1,0 +1,18 @@
+﻿@using BOL;
+@{
+    ViewBag.Title = "Delete";
+}
+
+@{
+    List<Product> newProduct = Model as List<Product>;
+    foreach (Product p in newProduct)
+    {
+        <li>
+            @p.Title | @Html.ActionLink("Details", "Details", "Products", new { id = p.Id }) |
+            @Html.ActionLink("Update", "Update", "Products", new { id = p.Id }) |
+            @Html.ActionLink("Delete", "Delete", "Products", new { id = p.Id })
+        </li>
+
+    }
+}
+
